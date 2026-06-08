@@ -2,7 +2,7 @@
 
 **🙋‍♀️ What is this?**
 
-Antergos NeXT is a modern revival of the Antergos Linux live ISO. KDE Plasma + Cnchi installer. Arch Linux. Nothing else.
+Antergos NeXT is a modern revival of the Antergos Linux live ISO. Ships KDE Plasma by default with multiple desktop environments available via the Cnchi installer. Arch Linux. Nothing else.
 
 **🌈 Contribute?**
 
@@ -15,4 +15,4 @@ Fork the ISO repo, tweak packages, fix Cnchi, open a PR. All GPL-2.0.
 
 **🍿 Fun fact**
 
-Antergos started in 2012 as a GNOME-first distro. NeXT brings it back, but KDE this time.
+Antergos launched in **July 2012** as **Cinnarch** — Cinnamon on Arch. By May 2013 they'd switched to GNOME and renamed it Antergos ("ancestors" in Galician). Ran until May 2019. NeXT revives it a decade later, KDE first, with Cinnamon, XFCE, GNOME, Budgie, Deepin, LXQT, Openbox, i3, and more at your fingertips during install. Full circle.
