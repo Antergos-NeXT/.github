@@ -1,68 +1,100 @@
-<div align="center">
+<!--
+Antergos NeXT org profile
+Uses picture + prefers-color-scheme for light/dark aware header banner
+-->
 
-# Antergos NeXT
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='720' height='300'%3E%3Crect width='720' height='300' fill='%23111215'/%3E%3Ctext x='360' y='70' text-anchor='middle' font-family='monospace' font-weight='bold' font-size='36' fill='%2389b4fa'%3EAntergos NeXT%3C/text%3E%3Ctext x='360' y='105' text-anchor='middle' font-family='monospace' font-size='15' fill='%236c7086'%3ENot just a revival — a modernization.%3C/text%3E%3Ctext x='360' y='145' text-anchor='middle' font-family='monospace' font-size='12' fill='%23585b70'%3EThis is an independent continuation of the Antergos Linux distribution.%3C/text%3E%3Ctext x='360' y='170' text-anchor='middle' font-family='monospace' font-size='12' fill='%23585b70'%3EWe fix what broke, adopt what's new, and leave what's past in the past.%3C/text%3E%3Ctext x='360' y='195' text-anchor='middle' font-family='monospace' font-size='12' fill='%23585b70'%3EThis is not a museum piece — Antergos NeXT is a living project that evolves.%3C/text%3E%3Ctext x='360' y='240' text-anchor='middle' font-family='monospace' font-size='11' fill='%2345475a'%3EArch Linux ⋅ Cnchi Installer ⋅ GNOME Desktop ⋅ GTK4 ⋅ Calamares (experimental)%3C/text%3E%3Ctext x='360' y='265' text-anchor='middle' font-family='monospace' font-size='11' fill='%2345475a'%3EChannel 666 easter egg ⋅ CI-built package repo ⋅ Antergos NeXT memes%3C/text%3E%3C/svg%3E">
+    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='720' height='300'%3E%3Crect width='720' height='300' fill='%23ffffff'/%3E%3Ctext x='360' y='70' text-anchor='middle' font-family='monospace' font-weight='bold' font-size='36' fill='%231e66e5'%3EAntergos NeXT%3C/text%3E%3Ctext x='360' y='105' text-anchor='middle' font-family='monospace' font-size='15' fill='%236b7280'%3ENot just a revival — a modernization.%3C/text%3E%3Ctext x='360' y='145' text-anchor='middle' font-family='monospace' font-size='12' fill='%239ca3af'%3EThis is an independent continuation of the Antergos Linux distribution.%3C/text%3E%3Ctext x='360' y='170' text-anchor='middle' font-family='monospace' font-size='12' fill='%239ca3af'%3EWe fix what broke, adopt what's new, and leave what's past in the past.%3C/text%3E%3Ctext x='360' y='195' text-anchor='middle' font-family='monospace' font-size='12' fill='%239ca3af'%3EThis is not a museum piece — Antergos NeXT is a living project that evolves.%3C/text%3E%3Ctext x='360' y='240' text-anchor='middle' font-family='monospace' font-size='11' fill='%23d1d5db'%3EArch Linux ⋅ Cnchi Installer ⋅ GNOME Desktop ⋅ GTK4 ⋅ Calamares (experimental)%3C/text%3E%3Ctext x='360' y='265' text-anchor='middle' font-family='monospace' font-size='11' fill='%23d1d5db'%3EChannel 666 easter egg ⋅ CI-built package repo ⋅ Antergos NeXT memes%3C/text%3E%3C/svg%3E" alt="Antergos NeXT banner" width="720">
+  </picture>
+</p>
 
-<sub><i>reboot. revive. remix.</i></sub>
-
-</div>
-
-<marquee behavior="scroll" direction="left" scrollamount="3">🟦 🟢 🟡 🔵 🟢 🟡 🔵 🟢 🟡 🔵 🟢 🟡</marquee>
+> *"I think it's fine so long as it's clear that your project is your own and not affiliated with the original. Have fun!"* — Dustin (original Antergos founder)
 
 ---
 
-**Not just a revival — a modernization.**
+## 🔵 What's back
 
-This is an independent continuation of the Antergos Linux distribution, picking up where it left off and pushing forward.
+- The **Antergos name** and **logo**
+- The **Cnchi installer** (now ported to **GTK4**)
+- The spirit of an Arch Linux live environment that just works
+- **Community-driven development** — contributions welcome
 
-Some things return. Some things don't. We fix what broke, adopt what's new, and leave what's past in the past. This is not a museum piece — Antergos NeXT is a living project that evolves.
+## 🟢 What's new or changed
 
-> <i>"I think it's fine so long as it's clear that your project is your own and not affiliated with the original. Have fun!"</i> — Dustin (original Antergos founder)
+- **GTK4 port** of Cnchi — modern toolkit, not the old GTK3
+- **Calamares** as an experimental secondary installer
+- **Channel 666 easter egg** — type `666` three times during installation
+- **Antergos NeXT memes** package — audio files for easter eggs
+- **Modern CI** — all packages auto-built and deployed to gh-pages
+- **Light blue theme**, updated wallpapers, GNOME default DE
+- **Sudo -E** launcher instead of pkexec for Cnchi (wheel NOPASSWD)
+
+## 🟡 What's not coming back
+
+❌ 1:1 replica of the original ISO — ❌ Unmaintainable packages — ❌ Outdated design choices — ❌ The old GTK3 Cnchi — ❌ Anything that belongs in a different era
+
+If you came looking for a museum piece, you're in the wrong place. This is forward, not backward.
+
+---
+
+## Repos
+
+| Repo | Description |
+|------|-------------|
+| [**Antergos-NeXT-ISO**](https://github.com/Antergos-NeXT/Antergos-NeXT-ISO) | Live ISO build — Arch Linux, GNOME, Cnchi installer |
+| [**Cnchi**](https://github.com/Antergos-NeXT/Cnchi) | GTK4 graphical installer (cnchi-dev branch) |
+| [**antergos-packages**](https://github.com/Antergos-NeXT/antergos-packages) | Custom package repository with CI |
+
+### Package list
+
+| Package | Type |
+|---------|------|
+| `cnchi` | Graphical installer |
+| `calamares` | Universal installer (experimental) |
+| `calamares-branding-antergos-next` | Calamares theme |
+| `antergos-next-keyring` | GPG keyring |
+| `antergos-next-mirrorlist` | Mirror config |
+| `antergos-next-desktop-settings` | GTK/Plasma theme defaults |
+| `antergos-next-memes` | Easter egg audio |
+| `antergos-wallpapers` | Desktop wallpapers |
+| `yay` | AUR helper |
+| `downgrade` | Package downgrade tool |
 
 ---
 
 <details>
-<summary><b>🔵 What's back / 🟢 What's new / 🟡 What's not</b></summary>
+<summary><b>📜 Fun fact — the name saga</b></summary>
 
-<br>
+This project launched as **Antergos NeXT** — a direct nod to the original. After a takedown request from a former dev (who was not Dustin), it was temporarily renamed to **Pulsar Linux** to avoid legal headache. But when Dustin Falgout — one of the three original Antergos founders — heard about it, he gave his explicit blessing to use the Antergos name:
 
-| 🔵 Back | 🟢 New |
-|---|---|
-| The **Antergos name**, logo, Cnchi installer | **GTK4 port** of Cnchi |
-| Arch live env that just works | **Calamares** experimental installer |
-| Community-driven development | **Channel 666** easter egg |
-| | CI-built package repo |
+> *"I think it's fine so long as it's clear that your project is your own and not affiliated with the original. Have fun!"*
 
-<b>🟡 What's not coming back</b>
-
-❌ 1:1 replica — ❌ Unmaintainable packages — ❌ Outdated design choices
+So we switched back. Pulsar Linux continues as a [separate project](https://github.com/Pulsar-Linux) under its own identity.
 
 </details>
 
-<br>
+<details>
+<summary><b>🔧 Technical details</b></summary>
 
-<div align="center">
+- **ISO build**: `mkarchiso` (archiso) with `./prepare.sh && sudo ./mkarchiso -v .`
+- **Installer**: Cnchi (GTK4, Python), Calamares (Qt6, C++, experimental)
+- **Session type**: Live environment with `archiso` + `systemd-boot`
+- **Desktop**: GNOME (default), KDE Plasma available
+- **Packaging**: All custom packages built via GitHub Actions, hosted on gh-pages
+- **Signing**: Packages currently unsigned (no secret key in CI) — keyring package exists for future use
+- **Easter egg**: CHANNEL 666 — type 666 three times for a special experience
+- **Maintainer**: Solo (Celestia Ludenberg), recovering from ankle injury — updates may be slow
 
-<a href="https://github.com/Antergos-NeXT/Antergos-NeXT-ISO"><img src="https://img.shields.io/badge/ISO-Live%20Build-89b4fa?style=for-the-badge" alt="ISO"></a>
-<a href="https://github.com/Antergos-NeXT/Cnchi"><img src="https://img.shields.io/badge/Cnchi-GTK4%20Installer-a6e3a1?style=for-the-badge" alt="Cnchi"></a>
-<a href="https://github.com/Antergos-NeXT/antergos-packages"><img src="https://img.shields.io/badge/Packages-Custom%20Repo-f9e2af?style=for-the-badge" alt="Packages"></a>
-
-</div>
+</details>
 
 ---
 
-<details>
-<summary><b>📜 Fun fact</b></summary>
+## This project is **not affiliated with, endorsed by, or connected to** the original Antergos project or its developers. It is an independent effort built upon the legacy of Antergos, not a sanctioned continuation.
 
-This project was originally launched as "Antergos NeXT", temporarily renamed to "Pulsar Linux" after a takedown request, and then restored to "Antergos NeXT" when Dustin Falgout (one of three original devs) gave his blessing. Pulsar Linux continues as a <a href="https://github.com/Pulsar-Linux">separate project</a>.
+---
 
-</details>
+<p align="center"><sub><i>Maintained solo by Celestia Ludenberg. Updates may be slow — be patient, or better yet, contribute.</i></sub></p>
 
-<br>
-
-This project is <b>not affiliated with, endorsed by, or connected to</b> the original Antergos project or its developers. It is an independent effort built upon the legacy of Antergos, not a sanctioned continuation.
-
-<br>
-
-<sub><i>Maintained solo by Celestia Ludenberg. Updates may be slow — be patient, or better yet, contribute.</i></sub>
-
-<marquee behavior="scroll" direction="right" scrollamount="2">lol if you thought this was a 1:1 revival you were mistaken — antergos-next is a modernization, not a museum</marquee>
+<p align="center"><sub><i>If you came here thinking this is a direct revival of the original Antergos, you were mistaken lol. Antergos NeXT is a modernization project — what comes back does so on our terms, not as a museum replica. Not everything returns, and that's intentional.</i></sub></p>
