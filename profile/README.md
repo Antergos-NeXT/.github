@@ -43,8 +43,8 @@ If you came looking for a museum piece, you're in the wrong place. This is forwa
 
 | Repo | Description |
 |------|-------------|
-| [**Antergos-NeXT-ISO**](https://github.com/Antergos-NeXT/Antergos-NeXT-ISO) | Live ISO build — Arch Linux, GNOME, Cnchi installer |
-| [**Cnchi**](https://github.com/Antergos-NeXT/Cnchi) | GTK4 graphical installer (cnchi-dev branch) |
+| [**Antergos-NeXT-ISO**](https://github.com/Antergos-NeXT/antergos-iso) | Live ISO build — Arch Linux, GNOME, Cnchi installer |
+| [**Cnchi**](https://github.com/Antergos-NeXT/cnchi-next) | GTK4 graphical installer (cnchi-dev branch) |
 | [**antergos-packages**](https://github.com/Antergos-NeXT/antergos-packages) | Custom package repository with CI |
 
 ### Package list
