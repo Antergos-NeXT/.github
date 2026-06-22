@@ -1,39 +1,115 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="720" height="300">
-  <rect width="720" height="300" fill="#ffffff"/>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#eef2ff">
+        <animate attributeName="stop-color" values="#eef2ff;#dce5ff;#eef2ff" dur="12s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="50%" stop-color="#f8faff">
+        <animate attributeName="stop-color" values="#f8faff;#e8eeff;#f8faff" dur="10s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" stop-color="#ffffff">
+        <animate attributeName="stop-color" values="#ffffff;#f2f5ff;#ffffff" dur="8s" repeatCount="indefinite"/>
+      </stop>
+    </linearGradient>
 
-  <text x="360" y="70" text-anchor="middle" font-family="monospace" font-weight="bold" font-size="36" fill="#1e66e5" opacity="0">
-    Antergos NeXT
-    <animate attributeName="opacity" from="0" to="1" dur="1s" fill="freeze"/>
-    <animate attributeName="y" from="90" to="70" dur="1s" fill="freeze"/>
-  </text>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
 
-  <text x="360" y="105" text-anchor="middle" font-family="monospace" font-size="15" fill="#374151" opacity="0">
+    <filter id="blur-circle">
+      <feGaussianBlur stdDeviation="30"/>
+    </filter>
+  </defs>
+
+  <rect width="720" height="300" fill="url(#bg)"/>
+
+  <circle cx="580" cy="50" r="90" fill="#1e66e5" opacity="0.05" filter="url(#blur-circle)">
+    <animate attributeName="r" values="90;120;90" dur="7s" repeatCount="indefinite"/>
+    <animate attributeName="cx" values="580;600;580" dur="12s" repeatCount="indefinite"/>
+  </circle>
+
+  <circle cx="140" cy="250" r="70" fill="#1e66e5" opacity="0.03" filter="url(#blur-circle)">
+    <animate attributeName="r" values="70;95;70" dur="9s" repeatCount="indefinite"/>
+    <animate attributeName="cy" values="250;240;250" dur="11s" repeatCount="indefinite"/>
+  </circle>
+
+  <circle cx="650" cy="260" r="50" fill="#40a02b" opacity="0.03" filter="url(#blur-circle)">
+    <animate attributeName="r" values="50;70;50" dur="8s" repeatCount="indefinite"/>
+  </circle>
+
+  <g>
+    <text x="360" y="75" text-anchor="middle" font-family="monospace" font-weight="bold" font-size="38" fill="#1e66e5" opacity="0">
+      Antergos NeXT
+      <animate attributeName="opacity" from="0" to="1" dur="1.2s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1"/>
+      <animate attributeName="y" from="110" to="75" dur="1.2s" fill="freeze" calcMode="spline" keySplines="0.34 1.56 0.64 1"/>
+    </text>
+
+    <line x1="360" y1="90" x2="360" y2="90" stroke="#1e66e5" stroke-width="2.5" stroke-linecap="round" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.6s" begin="1s" fill="freeze"/>
+      <animate attributeName="x1" from="360" to="245" dur="0.6s" begin="1s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1"/>
+      <animate attributeName="x2" from="360" to="475" dur="0.6s" begin="1s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1"/>
+    </line>
+  </g>
+
+  <text x="360" y="120" text-anchor="middle" font-family="monospace" font-size="15" fill="#374151" opacity="0">
     Not just a revival — a modernization.
-    <animate attributeName="opacity" from="0" to="1" dur="0.8s" begin="0.5s" fill="freeze"/>
+    <animate attributeName="opacity" from="0" to="1" dur="0.8s" begin="1.3s" fill="freeze"/>
+    <animate attributeName="y" from="130" to="120" dur="0.8s" begin="1.3s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1"/>
   </text>
 
-  <text x="360" y="145" text-anchor="middle" font-family="monospace" font-size="12" fill="#4b5563" opacity="0">
+  <text x="360" y="150" text-anchor="middle" font-family="monospace" font-size="12" fill="#4b5563" opacity="0">
     An independent continuation of the Antergos Linux distribution.
-    <animate attributeName="opacity" from="0" to="1" dur="0.6s" begin="1s" fill="freeze"/>
+    <animate attributeName="opacity" from="0" to="1" dur="0.6s" begin="1.8s" fill="freeze"/>
+    <animate attributeName="y" from="158" to="150" dur="0.6s" begin="1.8s" fill="freeze"/>
   </text>
 
-  <text x="360" y="170" text-anchor="middle" font-family="monospace" font-size="12" fill="#4b5563" opacity="0">
+  <text x="360" y="172" text-anchor="middle" font-family="monospace" font-size="12" fill="#4b5563" opacity="0">
     We fix what broke, adopt what's new, and leave what's past in the past.
-    <animate attributeName="opacity" from="0" to="1" dur="0.6s" begin="1.3s" fill="freeze"/>
+    <animate attributeName="opacity" from="0" to="1" dur="0.6s" begin="2.2s" fill="freeze"/>
+    <animate attributeName="y" from="180" to="172" dur="0.6s" begin="2.2s" fill="freeze"/>
   </text>
 
-  <text x="360" y="195" text-anchor="middle" font-family="monospace" font-size="12" fill="#4b5563" opacity="0">
+  <text x="360" y="194" text-anchor="middle" font-family="monospace" font-size="12" fill="#4b5563" opacity="0">
     This is not a museum piece — Antergos NeXT is a living project that evolves.
-    <animate attributeName="opacity" from="0" to="1" dur="0.6s" begin="1.6s" fill="freeze"/>
+    <animate attributeName="opacity" from="0" to="1" dur="0.6s" begin="2.6s" fill="freeze"/>
+    <animate attributeName="y" from="202" to="194" dur="0.6s" begin="2.6s" fill="freeze"/>
   </text>
+
+  <line x1="310" y1="220" x2="410" y2="220" stroke="#d1d5db" stroke-width="1" opacity="0">
+    <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="3.2s" fill="freeze"/>
+    <animate attributeName="x1" from="360" to="310" dur="0.5s" begin="3.2s" fill="freeze"/>
+    <animate attributeName="x2" from="360" to="410" dur="0.5s" begin="3.2s" fill="freeze"/>
+  </line>
 
   <text x="360" y="240" text-anchor="middle" font-family="monospace" font-size="11" fill="#9ca3af" opacity="0">
     Arch Linux · Cnchi Installer · GNOME Desktop · GTK4 · Calamares (experimental)
-    <animate attributeName="opacity" from="0" to="1" dur="0.8s" begin="2s" fill="freeze"/>
+    <animate attributeName="opacity" from="0" to="1" dur="0.8s" begin="3.5s" fill="freeze"/>
   </text>
 
-  <text x="360" y="265" text-anchor="middle" font-family="monospace" font-size="11" fill="#9ca3af" opacity="0">
+  <text x="360" y="258" text-anchor="middle" font-family="monospace" font-size="11" fill="#9ca3af" opacity="0">
     Channel 666 easter egg · CI-built package repo · Antergos NeXT memes
-    <animate attributeName="opacity" from="0" to="1" dur="0.8s" begin="2.3s" fill="freeze"/>
+    <animate attributeName="opacity" from="0" to="1" dur="0.8s" begin="3.8s" fill="freeze"/>
   </text>
+
+  <circle cx="330" cy="282" r="3" fill="#1e66e5" opacity="0">
+    <animate attributeName="opacity" values="0;0.3" dur="0.3s" begin="4.2s" fill="freeze"/>
+    <animate attributeName="r" values="0;3" dur="0.3s" begin="4.2s" fill="freeze"/>
+  </circle>
+  <circle cx="360" cy="282" r="3" fill="#40a02b" opacity="0">
+    <animate attributeName="opacity" values="0;0.3" dur="0.3s" begin="4.4s" fill="freeze"/>
+    <animate attributeName="r" values="0;3" dur="0.3s" begin="4.4s" fill="freeze"/>
+  </circle>
+  <circle cx="390" cy="282" r="3" fill="#1e66e5" opacity="0">
+    <animate attributeName="opacity" values="0;0.3" dur="0.3s" begin="4.6s" fill="freeze"/>
+    <animate attributeName="r" values="0;3" dur="0.3s" begin="4.6s" fill="freeze"/>
+  </circle>
+
+  <circle cx="330" cy="282" r="3" fill="none" stroke="#1e66e5" stroke-width="1" opacity="0">
+    <animate attributeName="opacity" values="0;0.5;0" dur="1.2s" begin="4.8s" repeatCount="indefinite"/>
+    <animate attributeName="r" values="3;8" dur="1.2s" begin="4.8s" repeatCount="indefinite"/>
+  </circle>
 </svg>
