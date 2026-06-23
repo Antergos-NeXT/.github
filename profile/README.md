@@ -24,7 +24,7 @@ Uses picture + prefers-color-scheme for light/dark aware header banner
 ## 🟢 What's new or changed
 
 - **GTK4 port** of Cnchi — modern toolkit, not the old GTK3
-- **Calamares** as an experimental secondary installer
+- **Calamares** as an experimental secondary installer — offline (GNOME squashfs) + online (8 DEs via netinstall), dracut initramfs
 - **Channel 666 easter egg** — type `666` three times during installation
 - **Antergos NeXT memes** package — audio files for easter eggs
 - **Modern CI** — all packages auto-built and deployed to gh-pages
@@ -54,6 +54,7 @@ If you came looking for a museum piece, you're in the wrong place. This is forwa
 | `cnchi` | Graphical installer |
 | `calamares` | Universal installer (experimental) |
 | `calamares-branding-antergos-next` | Calamares theme |
+| `hal` | HAL 9000 package manager — dual-mode, native dep resolver |
 | `antergos-next-keyring` | GPG keyring |
 | `antergos-next-mirrorlist` | Mirror config |
 | `antergos-next-desktop-settings` | GTK/Plasma theme defaults |
@@ -79,7 +80,7 @@ So we switched back. Pulsar Linux continues as a [separate project](https://gith
 <summary><b>🔧 Technical details</b></summary>
 
 - **ISO build**: `mkarchiso` (archiso) with `./prepare.sh && sudo ./mkarchiso -v .`
-- **Installer**: Cnchi (GTK4, Python), Calamares (Qt6, C++, experimental)
+- **Installer**: Cnchi (GTK4, Python), Calamares (Qt6, C++, offline GNOME + online netinstall with 8 DEs, dracut)
 - **Session type**: Live environment with `archiso` + `systemd-boot`
 - **Desktop**: GNOME (default), KDE Plasma available
 - **Packaging**: All custom packages built via GitHub Actions, hosted on gh-pages
