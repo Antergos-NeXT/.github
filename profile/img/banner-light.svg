@@ -86,12 +86,12 @@
   </line>
 
   <text x="360" y="240" text-anchor="middle" font-family="monospace" font-size="11" fill="#9ca3af" opacity="0">
-    Arch Linux · Cnchi Installer · GNOME Desktop · GTK4 · Calamares (experimental)
+    Arch Linux · Calamares Installer · GNOME Desktop · dracut · hal package manager
     <animate attributeName="opacity" from="0" to="1" dur="0.8s" begin="3.5s" fill="freeze"/>
   </text>
 
   <text x="360" y="258" text-anchor="middle" font-family="monospace" font-size="11" fill="#9ca3af" opacity="0">
-    Channel 666 easter egg · CI-built package repo · Antergos NeXT memes
+    offline + online install · CI-built package repo · Antergos NeXT memes
     <animate attributeName="opacity" from="0" to="1" dur="0.8s" begin="3.8s" fill="freeze"/>
   </text>
 

@@ -17,23 +17,22 @@ Uses picture + prefers-color-scheme for light/dark aware header banner
 ## 🔵 What's back
 
 - The **Antergos name** and **logo**
-- The **Cnchi installer** (now ported to **GTK4**)
+- The **Calamares installer** — mature, upstream-supported, offline + online modes
 - The spirit of an Arch Linux live environment that just works
 - **Community-driven development** — contributions welcome
 
 ## 🟢 What's new or changed
 
-- **GTK4 port** of Cnchi — modern toolkit, not the old GTK3
-- **Calamares** as an experimental secondary installer — offline (GNOME squashfs) + online (8 DEs via netinstall), dracut initramfs
-- **Channel 666 easter egg** — type `666` three times during installation
-- **Antergos NeXT memes** package — audio files for easter eggs
+- **Calamares** as the primary installer — offline (GNOME squashfs) + online (8 DEs via netinstall), dracut initramfs
+- **HAL 9000 package manager** — dual-mode (pacman wrapper + native standalone)
+- **Antergos NeXT memes** package — welcome audio
 - **Modern CI** — all packages auto-built and deployed to gh-pages
 - **Light blue theme**, updated wallpapers, GNOME default DE
-- **Sudo -E** launcher instead of pkexec for Cnchi (wheel NOPASSWD)
+- **dracut** replaces mkinitcpio
 
 ## 🟡 What's not coming back
 
-❌ 1:1 replica of the original ISO — ❌ Unmaintainable packages — ❌ Outdated design choices — ❌ The old GTK3 Cnchi — ❌ Anything that belongs in a different era
+❌ 1:1 replica of the original ISO — ❌ Cnchi (retired — too unstable to maintain) — ❌ Unmaintainable packages — ❌ Outdated design choices — ❌ The old GTK3 Cnchi — ❌ Anything that belongs in a different era
 
 If you came looking for a museum piece, you're in the wrong place. This is forward, not backward.
 
@@ -43,22 +42,20 @@ If you came looking for a museum piece, you're in the wrong place. This is forwa
 
 | Repo | Description |
 |------|-------------|
-| [**Antergos-NeXT-ISO**](https://github.com/Antergos-NeXT/antergos-iso) | Live ISO build — Arch Linux, GNOME, Cnchi installer |
-| [**Cnchi**](https://github.com/Antergos-NeXT/cnchi-next) | GTK4 graphical installer (cnchi-dev branch) |
+| [**Antergos-NeXT-ISO**](https://github.com/Antergos-NeXT/antergos-iso) | Live ISO build — Arch Linux, GNOME, Calamares |
 | [**antergos-packages**](https://github.com/Antergos-NeXT/antergos-packages) | Custom package repository with CI |
 
 ### Package list
 
 | Package | Type |
 |---------|------|
-| `cnchi` | Graphical installer |
-| `calamares` | Universal installer (experimental) |
+| `calamares` | Universal installer |
 | `calamares-branding-antergos-next` | Calamares theme |
 | `hal` | HAL 9000 package manager — dual-mode, native dep resolver |
 | `antergos-next-keyring` | GPG keyring |
 | `antergos-next-mirrorlist` | Mirror config |
 | `antergos-next-desktop-settings` | GTK/Plasma theme defaults |
-| `antergos-next-memes` | Easter egg audio |
+| `antergos-next-memes` | Mix of audios for misc things — may or may not be used, we don't know |
 | `antergos-wallpapers` | Desktop wallpapers |
 | `yay` | AUR helper |
 | `downgrade` | Package downgrade tool |
@@ -80,7 +77,7 @@ So we switched back. Pulsar Linux continues as a [separate project](https://gith
 <summary><b>🔧 Technical details</b></summary>
 
 - **ISO build**: `mkarchiso` (archiso) with `./prepare.sh && sudo ./mkarchiso -v .`
-- **Installer**: Cnchi (GTK4, Python), Calamares (Qt6, C++, offline GNOME + online netinstall with 8 DEs, dracut)
+- **Installer**: Calamares (Qt6, C++, offline GNOME + online netinstall with 8 DEs, dracut)
 - **Session type**: Live environment with `archiso` + `systemd-boot`
 - **Desktop**: GNOME (default), KDE Plasma available
 - **Packaging**: All custom packages built via GitHub Actions, hosted on gh-pages
