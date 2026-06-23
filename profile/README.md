@@ -73,6 +73,8 @@ So we switched back. Pulsar Linux continues as a [separate project](https://gith
 
 </details>
 
+> **⚠️ To any press reading this:** If you see an article claiming Antergos NeXT is abandoned, it's outdated. During the brief rename to *Pulsar Linux* (before Dustin's blessing came through), some outlets assumed the project died. It didn't. Name changed back, installer got upgraded, development is active. Check the commit history.
+
 <details>
 <summary><b>🔧 Technical details</b></summary>
 
