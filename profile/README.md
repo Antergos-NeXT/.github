@@ -23,18 +23,30 @@ Uses picture + prefers-color-scheme for light/dark aware header banner
 
 ## 🟢 What's new or changed
 
-- **Calamares** as the primary installer — offline (GNOME squashfs) + online (8 DEs via netinstall), dracut initramfs
-- **HAL 9000 package manager** — dual-mode (pacman wrapper + native standalone)
-- **Antergos NeXT memes** package — welcome audio
+- **Artix Linux** base with **OpenRC** instead of Arch/systemd
+- **Calamares** as the primary installer — offline (KDE squashfs) + online (netinstall with multiple DEs), OpenRC services configured
+- **KDE Plasma** as the default desktop environment (GNOME removed — systemd dependency)
+- **buildiso (artools)** for ISO builds
 - **Modern CI** — all packages auto-built and deployed to gh-pages
-- **Light blue theme**, updated wallpapers, GNOME default DE
-- **dracut** replaces mkinitcpio
+- **Antergos branding** throughout — about dialog, installer theme, default branding fallback
 
 ## 🟡 What's not coming back
 
-❌ 1:1 replica of the original ISO — ❌ Cnchi (retired — too unstable to maintain) — ❌ Unmaintainable packages — ❌ Outdated design choices — ❌ The old GTK3 Cnchi — ❌ Anything that belongs in a different era
+❌ 1:1 replica of the original ISO — ❌ Cnchi (retired — too unstable to maintain) — ❌ Unmaintainable packages — ❌ Outdated design choices — ❌ The old GTK3 Cnchi — ❌ systemd — ❌ Anything that belongs in a different era
 
 If you came looking for a museum piece, you're in the wrong place. This is forward, not backward.
+
+## 🐧 Why OpenRC?
+
+Antergos NeXT is migrating *away* from systemd to OpenRC. Here's why:
+
+- **systemd is an ever-growing monolith** — it started as an init system, now it controls logind, resolved, timedated, homed, journald, networkd, and is pushing age verification fields into the OS. It has abandoned the Unix philosophy of doing one thing well.
+- **GNOME became a systemd hostage** — GNOME 49+ dropped non-systemd code paths entirely, making it impossible to run GNOME without systemd. Artix Linux dropped GNOME for this reason in 2025.
+- **We don't trust systemd's trajectory** — the project has grown beyond init into a full OS management suite with no accountability, no modularity, and an ever-expanding scope that belongs in userspace, not PID 1.
+- **Systemd's age verification** — [PR #40954](https://github.com/systemd/systemd/pull/40954) (merged Mar 2026) added an optional `birthDate` field to userdb JSON records for age verification compliance with California, Colorado, and Brazil laws. Optional today — precedent tomorrow. This is not the future Antergos wants.
+- **systemd 260 (March 2026) dropped SysV init support entirely** — `systemd-sysv-generator`, `rc-local.service`, and all legacy compatibility code removed. No fallback. If your distro isn't 100% systemd-native, it breaks. We'd rather not tie our distro to that trajectory.
+
+> To the users who loved Antergos with systemd — we know this isn't what you signed up for. The original Antergos ran on systemd, and we wanted to keep it that way. But systemd's direction left us with no choice. Blame upstream, not us.
 
 ---
 
@@ -42,16 +54,17 @@ If you came looking for a museum piece, you're in the wrong place. This is forwa
 
 | Repo | Description |
 |------|-------------|
-| [**Antergos-NeXT-ISO**](https://github.com/Antergos-NeXT/antergos-iso) | Live ISO build — Arch Linux, GNOME, Calamares |
+| [**antergos-iso**](https://github.com/Antergos-NeXT/antergos-iso) | Live ISO build — Artix Linux, KDE Plasma, Calamares, OpenRC |
 | [**antergos-packages**](https://github.com/Antergos-NeXT/antergos-packages) | Custom package repository with CI |
+| [**cnchi-next**](https://github.com/Antergos-NeXT/cnchi-next) | Graphical installer for Arch Linux — GTK4 fork (maintained separately) |
+| [**antergos-welcome**](https://github.com/Antergos-NeXT/antergos-welcome) | Welcome screen for Antergos NeXT live ISO |
 
 ### Package list
 
 | Package | Type |
 |---------|------|
-| `calamares` | Universal installer |
+| `calamares` | Universal installer (forked — Antergos NeXT branding, OpenRC module enabled) |
 | `calamares-branding-antergos-next` | Calamares theme |
-| `hal` | HAL 9000 package manager — dual-mode, native dep resolver |
 | `antergos-next-keyring` | GPG keyring |
 | `antergos-next-mirrorlist` | Mirror config |
 | `antergos-next-desktop-settings` | GTK/Plasma theme defaults |
@@ -78,11 +91,14 @@ So we switched back. Pulsar Linux continues as a [separate project](https://gith
 <details>
 <summary><b>🔧 Technical details</b></summary>
 
-- **ISO build**: `mkarchiso` (archiso) with `./prepare.sh && sudo ./mkarchiso -v .`
-- **Installer**: Calamares (Qt6, C++, offline GNOME + online netinstall with 8 DEs, dracut)
-- **Session type**: Live environment with `archiso` + `systemd-boot`
-- **Desktop**: GNOME (default), KDE Plasma available
+- **Base**: Artix Linux with OpenRC
+- **ISO build**: `buildiso` (artools) with custom pacman config and package overlay
+- **Installer**: Calamares (Qt6, C++, KDE offline + online netinstall with multiple DEs, OpenRC services support)
+- **Desktop**: KDE Plasma (default)
+- **Init**: OpenRC (no systemd)
+- **Boot**: GRUB (BIOS + UEFI)
 - **Packaging**: All custom packages built via GitHub Actions, hosted on gh-pages
+- **Repo layout**: Flat URL (`https://antergos-next.github.io/antergos-packages/`) — no arch subdirectory
 - **Signing**: Packages currently unsigned (no secret key in CI) — keyring package exists for future use
 - **Easter egg**: CHANNEL 666 — type 666 three times for a special experience
 - **Maintainer**: Solo (Celestia Ludenberg), recovering from ankle injury — updates may be slow
