@@ -43,8 +43,12 @@ Antergos NeXT is migrating *away* from systemd to OpenRC. Here's why:
 - **systemd is an ever-growing monolith** — it started as an init system, now it controls logind, resolved, timedated, homed, journald, networkd, and is pushing age verification fields into the OS. It has abandoned the Unix philosophy of doing one thing well.
 - **GNOME became a systemd hostage** — GNOME 49+ dropped non-systemd code paths entirely, making it impossible to run GNOME without systemd. Artix Linux dropped GNOME for this reason in 2025.
 - **We don't trust systemd's trajectory** — the project has grown beyond init into a full OS management suite with no accountability, no modularity, and an ever-expanding scope that belongs in userspace, not PID 1.
-- **Systemd's age verification** — [PR #40954](https://github.com/systemd/systemd/pull/40954) (merged Mar 2026) added an optional `birthDate` field to userdb JSON records for age verification compliance with California, Colorado, and Brazil laws. Optional today — precedent tomorrow. This is not the future Antergos wants.
+- **Systemd's age verification** — [PR #40954](https://github.com/systemd/systemd/pull/40954) (merged Mar 18, 2026) added a `birthDate` field to userdb records for age compliance (California AB-1043, Colorado SB26-051, Brazil Lei 15.211/2025). Oh, and [PR #41179](https://github.com/systemd/systemd/pull/41179) reverted it the next day after community outrage. "Fixed," right? Here's the thing — it got *merged in the first place*. Someone wrote it, someone reviewed it, someone pressed the button. The fact that it was walked back doesn't mean the trajectory changed — it means the Overton window shifted far enough that someone thought it was a good idea, and it'll be back in a friendlier form once the noise dies down. They're not sorry. They're waiting.
 - **systemd 260 (March 2026) dropped SysV init support entirely** — `systemd-sysv-generator`, `rc-local.service`, and all legacy compatibility code removed. No fallback. If your distro isn't 100% systemd-native, it breaks. We'd rather not tie our distro to that trajectory.
+- **systemd complains about services you never asked for** — install a clean Arch system, don't touch any optional services, and systemd will still nag you about `something.service` failing to start because it was *ConditionalExec*=*d* but not *enabled*. Optional services should be *optional*, not something the init system whines about at boot. We don't need an init system that nags. We need one that shuts up and runs what we tell it to.
+
+- **Could we go back to Arch?** `archiso` still works. The `before-systemd-change` branch in [antergos-iso](https://github.com/Antergos-NeXT/antergos-iso/tree/before-systemd-change) is literally the old systemd-based profile — it's right there, untouched, waiting. The profile could target Arch instead of Artix with about a weekend of work. The packages would build fine. We know the workflow. It would be easy. We could do it.  
+  **We won't.** Artix gave us OpenRC without a fight. Arch gave us systemd and said "deal with it." We chose the fork in the road that doesn't lead to a monopoly. This isn't about what's easier — it's about what's right for the project's future. If you want Arch with Antergos branding, the source is right there. Fork it. We mean that genuinely.
 
 > To the users who loved Antergos with systemd — we know this isn't what you signed up for. The original Antergos ran on systemd, and we wanted to keep it that way. But systemd's direction left us with no choice. Blame upstream, not us.
 
@@ -68,7 +72,8 @@ Antergos NeXT is migrating *away* from systemd to OpenRC. Here's why:
 | `antergos-next-keyring` | GPG keyring |
 | `antergos-next-mirrorlist` | Mirror config |
 | `antergos-next-desktop-settings` | GTK/Plasma theme defaults |
-| `antergos-next-memes` | Mix of audios for misc things — may or may not be used, we don't know |
+| `antergos-plasma-theme` | Plasma desktop theme (dark), look-and-feel, splash screen |
+| `antergos-sddm-theme` | SDDM login theme with built-in background |
 | `antergos-wallpapers` | Desktop wallpapers |
 | `yay` | AUR helper |
 | `downgrade` | Package downgrade tool |
