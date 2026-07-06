@@ -71,7 +71,7 @@ Antergos NeXT has migrated *away* from systemd. We default to Dinit, with OpenRC
 
 | Package | Type |
 |---------|------|
-| `calamares` | Universal installer (forked — Antergos NeXT branding, init-agnostic services module) |
+| `calamares` | Universal installer (upstream, packaged as-is) |
 | `calamares-branding-antergos-next` | Calamares theme |
 | `antergos-next-keyring` | GPG keyring |
 | `antergos-next-mirrorlist` | Mirror config |
