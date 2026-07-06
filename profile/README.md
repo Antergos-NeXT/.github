@@ -110,7 +110,7 @@ So we switched back. Pulsar Linux continues as a [separate project](https://gith
 - **Repo layout**: Flat URL (`https://antergos-next.github.io/antergos-packages/`) — no arch subdirectory
 - **Signing**: Packages currently unsigned (no secret key in CI) — keyring package exists for future use
 - **Easter egg**: CHANNEL 666 — type 666 three times for a special experience
-- **Maintainer**: Solo (Celestia Ludenberg), recovering from ankle injury — updates may be slow
+- **Maintainer**: Solo (Michał), recovering from ankle injury — updates may be slow
 
 </details>
 
@@ -120,6 +120,6 @@ So we switched back. Pulsar Linux continues as a [separate project](https://gith
 
 ---
 
-<p align="center"><sub><i>Maintained solo by Celestia Ludenberg. Updates may be slow — be patient, or better yet, contribute.</i></sub></p>
+<p align="center"><sub><i>Maintained solo by Michał. Updates may be slow — be patient, or better yet, contribute.</i></sub></p>
 
 <p align="center"><sub><i>If you came here thinking this is a direct revival of the original Antergos, you were mistaken lol. Antergos NeXT is a modernization project — what comes back does so on our terms, not as a museum replica. Not everything returns, and that's intentional.</i></sub></p>
