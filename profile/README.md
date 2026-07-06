@@ -23,8 +23,8 @@ Uses picture + prefers-color-scheme for light/dark aware header banner
 
 ## 🟢 What's new or changed
 
-- **Artix Linux** base with **OpenRC** instead of Arch/systemd
-- **Calamares** as the primary installer — offline (KDE squashfs) + online (netinstall with multiple DEs), OpenRC services configured
+- **Artix Linux** base with **Dinit** (OpenRC / Runit / S6 also available) instead of Arch/systemd
+- **Calamares** as the primary installer — offline (KDE squashfs) + online (netinstall with multiple DEs), init services configured
 - **KDE Plasma** as the default desktop environment (GNOME removed — systemd dependency)
 - **buildiso (artools)** for ISO builds
 - **Modern CI** — all packages auto-built and deployed to gh-pages
@@ -36,9 +36,9 @@ Uses picture + prefers-color-scheme for light/dark aware header banner
 
 If you came looking for a museum piece, you're in the wrong place. This is forward, not backward.
 
-## 🐧 Why OpenRC?
+## 🐧 Why not systemd?
 
-Antergos NeXT is migrating *away* from systemd to OpenRC. Here's why:
+Antergos NeXT has migrated *away* from systemd. We default to Dinit, with OpenRC, Runit, and S6 available. Here's why:
 
 - **systemd is an ever-growing monolith** — it started as an init system, now it controls logind, resolved, timedated, homed, journald, networkd, and is pushing age verification fields into the OS. It has abandoned the Unix philosophy of doing one thing well.
 - **GNOME became a systemd hostage** — GNOME 49+ dropped non-systemd code paths entirely, making it impossible to run GNOME without systemd. Artix Linux dropped GNOME for this reason in 2025.
@@ -49,10 +49,12 @@ Antergos NeXT is migrating *away* from systemd to OpenRC. Here's why:
 - **systemd complains about services you never asked for** — install a clean Arch system, don't touch any optional services, and systemd will still nag you about `something.service` failing to start because it was *ConditionalExec*=*d* but not *enabled*. Optional services should be *optional*, not something the init system whines about at boot. We don't need an init system that nags. We need one that shuts up and runs what we tell it to.
 
 - **Could we go back to Arch?** `archiso` still works. The `before-systemd-change` branch in [antergos-iso](https://github.com/Antergos-NeXT/antergos-iso/tree/before-systemd-change) is literally the old systemd-based profile — it's right there, untouched, waiting. The profile could target Arch instead of Artix with about a weekend of work. The packages would build fine. We know the workflow. It would be easy. We could do it.  
-  **We won't.** Artix gave us OpenRC without a fight. Arch gave us systemd and said "deal with it." We chose the fork in the road that doesn't lead to a monopoly. This isn't about what's easier — it's about what's right for the project's future. If you want Arch with Antergos branding, the source is right there. Fork it. We mean that genuinely.  
+  **We won't.** Artix gave us init freedom without a fight. Arch gave us systemd and said "deal with it." We chose the fork in the road that doesn't lead to a monopoly. This isn't about what's easier — it's about what's right for the project's future. If you want Arch with Antergos branding, the source is right there. Fork it. We mean that genuinely.  
   That said, if you want to stay on Arch/systemd but ditch the age verification baggage, there's [`systemd-liberated-git`](https://aur.archlinux.org/packages/systemd-liberated-git) on AUR — a community fork that strips the birthDate and surveillance-adjacent features. Not our path, but it exists if you need it.
 
 > To the users who loved Antergos with systemd — we know this isn't what you signed up for. The original Antergos ran on systemd, and we wanted to keep it that way. But systemd's direction left us with no choice. Blame upstream, not us.
+
+> **Wait, Dinit? What happened to OpenRC?** We shipped OpenRC. Then Calamares kidnapped pacman's resolver. Every `--noconfirm` call picked `elogind-dinit` (alphabetically before `elogind-openrc`), pulling in `dinit-rc` which conflicts with `openrc`. We tried `--ignore` — pacman ignored it. We tried `--assume-installed=init-logind` — ALPM doesn't check those for virtual providers. We tried `--ask=12` — infinite loop (pacman kept re-adding `elogind-dinit`). We tried a dummy package in a custom repo. Pacman laughed at all of them. Dinit works great. Don't blame us, blame alphabetical order.
 
 ---
 
@@ -60,7 +62,7 @@ Antergos NeXT is migrating *away* from systemd to OpenRC. Here's why:
 
 | Repo | Description |
 |------|-------------|
-| [**antergos-iso**](https://github.com/Antergos-NeXT/antergos-iso) | Live ISO build — Artix Linux, KDE Plasma, Calamares, OpenRC |
+| [**antergos-iso**](https://github.com/Antergos-NeXT/antergos-iso) | Live ISO build — Artix Linux, KDE Plasma, Calamares, Dinit |
 | [**antergos-packages**](https://github.com/Antergos-NeXT/antergos-packages) | Custom package repository with CI |
 | [**cnchi-next**](https://github.com/Antergos-NeXT/cnchi-next) | Graphical installer for Arch Linux — GTK4 fork (unmaintained, kept for reference) |
 | [**antergos-welcome**](https://github.com/Antergos-NeXT/antergos-welcome) | Welcome screen for Antergos NeXT live ISO |
@@ -69,7 +71,7 @@ Antergos NeXT is migrating *away* from systemd to OpenRC. Here's why:
 
 | Package | Type |
 |---------|------|
-| `calamares` | Universal installer (forked — Antergos NeXT branding, OpenRC module enabled) |
+| `calamares` | Universal installer (forked — Antergos NeXT branding, init-agnostic services module) |
 | `calamares-branding-antergos-next` | Calamares theme |
 | `antergos-next-keyring` | GPG keyring |
 | `antergos-next-mirrorlist` | Mirror config |
@@ -98,11 +100,11 @@ So we switched back. Pulsar Linux continues as a [separate project](https://gith
 <details>
 <summary><b>🔧 Technical details</b></summary>
 
-- **Base**: Artix Linux with OpenRC
+- **Base**: Artix Linux with Dinit (default) / OpenRC / Runit / S6
 - **ISO build**: `buildiso` (artools) with custom pacman config and package overlay
-- **Installer**: Calamares (Qt6, C++, KDE offline + online netinstall with multiple DEs, OpenRC services support)
+- **Installer**: Calamares (Qt6, C++, KDE offline + online netinstall with multiple DEs, init services support for Dinit / OpenRC / Runit / S6)
 - **Desktop**: KDE Plasma (default)
-- **Init**: OpenRC (no systemd)
+- **Init**: Dinit (default) / OpenRC / Runit / S6 — all available, user-selectable during install
 - **Boot**: GRUB (BIOS + UEFI)
 - **Packaging**: All custom packages built via GitHub Actions, hosted on gh-pages
 - **Repo layout**: Flat URL (`https://antergos-next.github.io/antergos-packages/`) — no arch subdirectory
