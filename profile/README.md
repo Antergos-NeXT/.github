@@ -45,7 +45,7 @@ Artix gave us Dinit, OpenRC, Runit, and S6. We tried to be clever and support al
 
 **Could we go back to Arch?** Yes. The old systemd profile is still in the `before-systemd-change` branch. It would take a weekend. We won't. If that bothers you, fork it. We mean that genuinely.
 
-> To the users who miss systemd — we know. Blame upstream, not us. An init system shouldn't need a birth date field, and we shouldn't need to explain why that's weird.
+> To the users who miss systemd: we're not bringing it back even if we wanted to. Go use a different distro if you need to. Sorry not sorry.
 
 ---
 
