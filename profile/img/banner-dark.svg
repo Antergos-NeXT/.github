@@ -91,7 +91,7 @@
   </text>
 
   <text x="360" y="258" text-anchor="middle" font-family="monospace" font-size="11" fill="#585b70" opacity="0">
-    offline + online install · CI-built package repo · Antergos branding
+    online install + BYODE · CI-built package repo · Antergos branding
     <animate attributeName="opacity" from="0" to="1" dur="0.8s" begin="3.8s" fill="freeze"/>
   </text>
 

@@ -17,18 +17,19 @@ Uses picture + prefers-color-scheme for light/dark aware header banner
 ## 🔵 What's back
 
 - The **Antergos name** and **logo**
-- The **Calamares installer** — mature, upstream-supported, offline + online modes
+- The **Calamares installer** — mature, upstream-supported, online mode (BYODE script for bare-system offline installs)
 - The spirit of an Arch Linux live environment that just works
 - **Community-driven development** — contributions welcome
 
 ## 🟢 What's new or changed
 
-- **Artix Linux** base with **Dinit** (OpenRC / Runit / S6 also available) instead of Arch/systemd
-- **Calamares** as the primary installer — offline (KDE squashfs) + online (netinstall with multiple DEs), init services configured
+- **Artix Linux** base with **Dinit** (switchable via changing-init.md) instead of Arch/systemd
+- **Calamares** as the primary installer — online (netinstall with multiple DEs) + BYODE offline script
 - **KDE Plasma** as the default desktop environment (GNOME removed — systemd dependency)
 - **buildiso (artools)** for ISO builds
 - **Modern CI** — all packages auto-built and deployed to gh-pages
 - **Antergos branding** throughout — about dialog, installer theme, default branding fallback
+- **Antergos Layan theme** — Kvantum, SDDM, GRUB theme, plasma plasmoids, Konsole, Yakuake skin
 
 ## 🟡 What's not coming back
 
@@ -54,7 +55,7 @@ Antergos NeXT has migrated *away* from systemd. We default to Dinit, with OpenRC
 
 > To the users who loved Antergos with systemd — we know this isn't what you signed up for. The original Antergos ran on systemd, and we wanted to keep it that way. But systemd's direction left us with no choice. Blame upstream, not us.
 
-> **Wait, Dinit? What happened to OpenRC?** We shipped OpenRC. Then Calamares kidnapped pacman's resolver. Every `--noconfirm` call picked `elogind-dinit` (alphabetically before `elogind-openrc`), pulling in `dinit-rc` which conflicts with `openrc`. We tried `--ignore` — pacman ignored it. We tried `--assume-installed=init-logind` — ALPM doesn't check those for virtual providers. We tried `--ask=12` — infinite loop (pacman kept re-adding `elogind-dinit`). We tried a dummy package in a custom repo. Pacman laughed at all of them. Dinit works great. Don't blame us, blame alphabetical order.
+> **Wait, Dinit? What happened to OpenRC?** We shipped OpenRC. Then Calamares kidnapped pacman's resolver. Every `--noconfirm` call picked `elogind-dinit` (alphabetically before `elogind-openrc`), pulling in `dinit-rc` which conflicts with `openrc`. We tried `--ignore` — pacman ignored it. We tried `--assume-installed=init-logind` — ALPM doesn't check those for virtual providers. We tried `--ask=12` — infinite loop (pacman kept re-adding `elogind-dinit`). We tried a dummy package in a custom repo. Pacman laughed at all of them. Dinit works great, and OpenRC's service enabling is broken on installed systems anyway. Don't blame us, blame alphabetical order.
 
 ---
 
@@ -81,6 +82,8 @@ Antergos NeXT has migrated *away* from systemd. We default to Dinit, with OpenRC
 | `antergos-wallpapers` | Desktop wallpapers |
 | `yay` | AUR helper |
 | `downgrade` | Package downgrade tool |
+| `antergos-layan-theme` | Layan theme suite (Kvantum, SDDM, plasmoids, Konsole, Yakuake) |
+| `antergos-grub-theme` | GRUB theme (Layan, 75 distro icons, Antergos wallpaper) |
 
 ---
 
@@ -102,9 +105,9 @@ So we switched back. Pulsar Linux continues as a [separate project](https://gith
 
 - **Base**: Artix Linux with Dinit (default) / OpenRC / Runit / S6
 - **ISO build**: `buildiso` (artools) with custom pacman config and package overlay
-- **Installer**: Calamares (Qt6, C++, KDE offline + online netinstall with multiple DEs, init services support for Dinit / OpenRC / Runit / S6)
+- **Installer**: Calamares (Qt6, C++, online netinstall with multiple DEs, Dinit only)
 - **Desktop**: KDE Plasma (default)
-- **Init**: Dinit (default) / OpenRC / Runit / S6 — all available, user-selectable during install
+- **Init**: Dinit (switch to OpenRC/Runit/S6 via changing-init.md)
 - **Boot**: GRUB (BIOS + UEFI)
 - **Packaging**: All custom packages built via GitHub Actions, hosted on gh-pages
 - **Repo layout**: Flat URL (`https://antergos-next.github.io/antergos-packages/`) — no arch subdirectory
