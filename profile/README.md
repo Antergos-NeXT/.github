@@ -115,4 +115,6 @@ So we switched back. Pulsar Linux continues as a [separate project](https://gith
 
 <p align="center"><sub><i>Maintained solo by Michał. Updates may be slow — be patient, or better yet, contribute.</i></sub></p>
 
+<p align="center"><a href="https://ko-fi.com/antergosnext"><img src="https://ko-fi.com/img/githubbutton_sm.svg" alt="ko-fi"></a></p>
+
 <p align="center"><sub><i>If you came here thinking this is a direct revival of the original Antergos, you were mistaken lol. Antergos NeXT is a modernization project — what comes back does so on our terms, not as a museum replica. Not everything returns, and that's intentional.</i></sub></p>
