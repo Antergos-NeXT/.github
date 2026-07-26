@@ -93,9 +93,9 @@ So we switched back. Pulsar Linux continues as a [separate project](https://gith
 <details>
 <summary><b>🔧 Technical details</b></summary>
 
-- **Base**: Artix Linux with Dinit (default) / OpenRC / Runit / S6
+- **Base**: Artix Linux with Dinit (default + only init)
 - **ISO build**: `buildiso` (artools) with custom pacman config and package overlay
-- **Installer**: Calamares (Qt6, C++, online netinstall with multiple DEs, Dinit only)
+- **Installer**: Calamares (Qt6, C++, online netinstall with multiple DEs)
 - **Desktop**: KDE Plasma (default)
 - **Init**: Dinit (switch to OpenRC/Runit/S6 via changing-init.md)
 - **Boot**: GRUB (BIOS + UEFI)
