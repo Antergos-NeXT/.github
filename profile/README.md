@@ -101,8 +101,8 @@ So we switched back. Pulsar Linux continues as a [separate project](https://gith
 - **Boot**: GRUB (BIOS + UEFI)
 - **Packaging**: All custom packages built via GitHub Actions, hosted on gh-pages
 - **Repo layout**: Flat URL (`https://antergos-next.github.io/antergos-packages/`) — no arch subdirectory
-- **Signing**: Packages currently unsigned (no secret key in CI) — keyring package exists for future use
-- **Easter egg**: CHANNEL 666 — type 666 three times for a special experience
+- **Signing**: Packages currently unsigned but Commits are signed with a special PGP key for Protection. 
+- **Easter egg**: deez nuts
 - **Maintainer**: Solo (Michał), recovering from ankle injury — updates may be slow
 
 </details>
