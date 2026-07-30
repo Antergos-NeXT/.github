@@ -39,7 +39,7 @@ If you came looking for a museum piece, you're in the wrong place. This is forwa
 
 ## 🐧 Why not systemd?
 
-Antergos NeXT uses Dinit — it's lightweight, fast, and stays out of the way. Artix provides Dinit, OpenRC, Runit, and S6; we chose Dinit as the supported default because OpenRC has service-enable bugs on installed systems. You can switch to another init via [`changing-init.md`](https://github.com/Antergos-NeXT/antergos-iso/blob/main/changing-init.md) in the ISO repo.
+Antergos NeXT uses Dinit — it's lightweight, fast, and stays out of the way. Artix provides Dinit, OpenRC, Runit, and S6; we chose Dinit as the supported default because OpenRC has service-enable bugs on installed systems. You can switch to another init via [`changing-init.md`](https://github.com/Antergos-NeXT/antergos-iso/docs/changing-init.md) in the ISO repo.
 
 ---
 
