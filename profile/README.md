@@ -39,13 +39,7 @@ If you came looking for a museum piece, you're in the wrong place. This is forwa
 
 ## 🐧 Why not systemd?
 
-Look, we get it. The original Antergos ran on systemd. You loved it. We loved it. But systemd stopped being "just an init system" somewhere around the time it started collecting birth dates and locking revert PRs. We're not saying systemd is evil — we're saying it's a monolith that keeps growing and we'd rather not tag along for the ride.
-
-Artix gave us Dinit, OpenRC, Runit, and S6. We tried to be clever and support all four. The installer kept picking `elogind-dinit` over `elogind-openrc` because pacman sorts alphabetically and nobody has time to write a resolver that accounts for init preferences. OpenRC also doesn't enable services correctly on installed systems. So it's Dinit now. You want something else? There's a `changing-init.md` in the ISO repo that walks you through it.
-
-**Could we go back to Arch?** Yes. The old systemd profile is still in the `before-systemd-change` branch. It would take a weekend. We won't. If that bothers you, fork it. We mean that genuinely.
-
-> To the users who miss systemd: we're not bringing it back even if we wanted to. Go use a different distro if you need to. Sorry not sorry.
+Antergos NeXT uses Dinit — it's lightweight, fast, and stays out of the way. Artix provides Dinit, OpenRC, Runit, and S6; we chose Dinit as the supported default because OpenRC has service-enable bugs on installed systems. You can switch to another init via [`changing-init.md`](https://github.com/Antergos-NeXT/antergos-iso/blob/main/changing-init.md) in the ISO repo.
 
 ---
 
@@ -101,8 +95,8 @@ So we switched back. Pulsar Linux continues as a [separate project](https://gith
 - **Boot**: GRUB (BIOS + UEFI)
 - **Packaging**: All custom packages built via GitHub Actions, hosted on gh-pages
 - **Repo layout**: Flat URL (`https://antergos-next.github.io/antergos-packages/`) — no arch subdirectory
-- **Signing**: Packages currently unsigned but Commits are signed with a special PGP key for Protection. 
-- **Easter egg**: deez nuts
+- **Signing**: Commits GPG-signed with `F1D8F02C5E929F3FE0424EE897F813D238CF0DBB`. Packages unsigned by design — avoids Manjaro-style GPG expiry lockouts on `pacman -Syu`.
+- **Easter egg**: the synthwave wallpaper
 - **Maintainer**: Solo (Michał), recovering from ankle injury — updates may be slow
 
 </details>
@@ -116,5 +110,3 @@ So we switched back. Pulsar Linux continues as a [separate project](https://gith
 <p align="center"><sub><i>Maintained solo by Michał. Updates may be slow — be patient, or better yet, contribute.</i></sub></p>
 
 <p align="center"><a href="https://ko-fi.com/antergosnext"><img src="https://ko-fi.com/img/githubbutton_sm.svg" alt="ko-fi"></a></p>
-
-<p align="center"><sub><i>If you came here thinking this is a direct revival of the original Antergos, you were mistaken lol. Antergos NeXT is a modernization project — what comes back does so on our terms, not as a museum replica. Not everything returns, and that's intentional.</i></sub></p>
