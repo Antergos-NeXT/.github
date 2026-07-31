@@ -108,5 +108,3 @@ So we switched back. Pulsar Linux continues as a [separate project](https://gith
 ---
 
 <p align="center"><sub><i>Maintained solo by Michał. Updates may be slow — be patient, or better yet, contribute.</i></sub></p>
-
-<p align="center"><a href="https://ko-fi.com/antergosnext"><img src="https://ko-fi.com/img/githubbutton_sm.svg" alt="ko-fi"></a></p>
