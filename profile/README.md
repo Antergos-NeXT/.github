@@ -74,11 +74,9 @@ Antergos NeXT uses Dinit — it's lightweight, fast, and stays out of the way. A
 <details>
 <summary><b>📜 Fun fact — the name saga</b></summary>
 
-This project launched as **Antergos NeXT** — a direct nod to the original. After a takedown request from a former dev (who was not Dustin), it was temporarily renamed to **Pulsar Linux** to avoid legal headache. But when Dustin Falgout — one of the three original Antergos founders — heard about it, he gave his explicit blessing to use the Antergos name:
+This project launched as **Antergos NeXT** — a direct nod to the original. After a request from a former team member (who was not Dustin), it was temporarily renamed to **Pulsar Linux** to avoid legal headache. But when Dustin Falgout — one of the three original Antergos developers — heard about it, he gave his explicit blessing to use the Antergos name:
 
 > *"I think it's fine so long as it's clear that your project is your own and not affiliated with the original. Have fun!"*
-
-So we switched back. Pulsar Linux continues as a [separate project](https://github.com/Pulsar-Linux) under its own identity.
 
 </details>
 
